@@ -1,0 +1,92 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/eggs/blue idle/blue idle 1.png" type="Texture" id=1]
+[ext_resource path="res://assets/eggs/blue idle/blue idle 2.png" type="Texture" id=2]
+[ext_resource path="res://assets/eggs/red idle/red dle 1.png" type="Texture" id=3]
+[ext_resource path="res://assets/eggs/green idle/animation0.png" type="Texture" id=4]
+[ext_resource path="res://assets/eggs/green idle/animation1.png" type="Texture" id=5]
+[ext_resource path="res://assets/eggs/red idle/red idle 2.png" type="Texture" id=6]
+[ext_resource path="res://scenes/scene1/attesa_schiusura.gd" type="Script" id=7]
+[ext_resource path="res://assets/backgrounds/dawnbackground.png" type="Texture" id=8]
+[ext_resource path="res://assets/sounds/OST2.mp3" type="AudioStream" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -1480.0
+margin_top = -19.0
+margin_right = 1668.0
+margin_bottom = 2342.0
+texture = ExtResource( 8 )
+stretch_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -350.0
+rect_min_size = Vector2( 0, 350 )
+
+[node name="Panel" type="Panel" parent="CanvasLayer/HBoxContainer"]
+margin_right = 900.0
+margin_bottom = 350.0
+rect_min_size = Vector2( 900, 0 )
+
+[node name="Blu" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 426, 900 )
+scale = Vector2( 0.475586, 0.475586 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="Verde" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 426, 900 )
+scale = Vector2( 0.476, 0.476 )
+frames = SubResource( 2 )
+playing = true
+
+[node name="Rosso" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 426, 900 )
+scale = Vector2( 0.476, 0.476 )
+frames = SubResource( 3 )
+playing = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

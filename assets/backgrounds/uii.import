@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/game-bit-ui-controller-level-live-bars-menu-stop-play-buttons-pixel-vector-illustration-isolated-white-background-vektor-266852004-removebg-preview.png-1cf4ec13639aaf3e7858fafaa16469e2.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/backgrounds/game-bit-ui-controller-level-live-bars-menu-stop-play-buttons-pixel-vector-illustration-isolated-white-background-vektor-266852004-removebg-preview.png"
+dest_files=[ "res://.import/game-bit-ui-controller-level-live-bars-menu-stop-play-buttons-pixel-vector-illustration-isolated-white-background-vektor-266852004-removebg-preview.png-1cf4ec13639aaf3e7858fafaa16469e2.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

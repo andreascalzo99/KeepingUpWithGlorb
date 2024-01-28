@@ -1,0 +1,322 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://assets/backgrounds/eat.png" type="Texture" id=1]
+[ext_resource path="res://assets/backgrounds/Remove-bg.ai_1706305662670.png" type="Texture" id=2]
+[ext_resource path="res://assets/backgrounds/lol2.png" type="Texture" id=3]
+[ext_resource path="res://assets/backgrounds/1000_F_351613254_vGi94APssVVPciVt4B8Czh0oliBXenrP-removebg-preview.png" type="Texture" id=4]
+[ext_resource path="res://assets/player/photo_2024-01-27_19-45-44-removebg-preview.png" type="Texture" id=5]
+[ext_resource path="res://scenes/scene2/Main.gd" type="Script" id=6]
+[ext_resource path="res://assets/sounds/OST.mp3" type="AudioStream" id=7]
+[ext_resource path="res://assets/player/photo_2024-01-28_13-21-30-removebg-preview.png" type="Texture" id=8]
+[ext_resource path="res://assets/player/photo_2024-01-28_13-13-33-removebg-preview.png" type="Texture" id=9]
+[ext_resource path="res://assets/font/Born2bSportyV10.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://assets/backgrounds/star-removebg-preview.png" type="Texture" id=11]
+[ext_resource path="res://assets/backgrounds/38_friedegg.png" type="Texture" id=12]
+[ext_resource path="res://assets/backgrounds/20_bagel.png" type="Texture" id=13]
+[ext_resource path="res://assets/backgrounds/menu ui.png" type="Texture" id=14]
+[ext_resource path="res://assets/backgrounds/90_strawberrycake.png" type="Texture" id=15]
+[ext_resource path="res://assets/backgrounds/nightbackgroundwithmoon.png" type="Texture" id=16]
+[ext_resource path="res://assets/backgrounds/close.png" type="Texture" id=17]
+[ext_resource path="res://assets/backgrounds/HPandMana.png" type="Texture" id=18]
+[ext_resource path="res://assets/backgrounds/dawnbackground.png" type="Texture" id=19]
+[ext_resource path="res://assets/backgrounds/sunsetbackground.png" type="Texture" id=20]
+[ext_resource path="res://scenes/scene2/HP.gd" type="Script" id=21]
+[ext_resource path="res://scenes/TextBox.tscn" type="PackedScene" id=22]
+[ext_resource path="res://assets/backgrounds/goOnP.png" type="Texture" id=23]
+[ext_resource path="res://assets/backgrounds/goOn.png" type="Texture" id=24]
+[ext_resource path="res://assets/player/photo_2024-01-27_19-38-54-removebg-preview.png" type="Texture" id=25]
+[ext_resource path="res://assets/player/photo_2024-01-28_13-21-13-removebg-preview.png" type="Texture" id=26]
+[ext_resource path="res://assets/backgrounds/lol.png" type="Texture" id=27]
+[ext_resource path="res://assets/backgrounds/eat2.png" type="Texture" id=28]
+[ext_resource path="res://assets/backgrounds/clean2.png" type="Texture" id=29]
+[ext_resource path="res://assets/player/photo_2024-01-28_13-13-41-removebg-preview.png" type="Texture" id=30]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 25 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ ExtResource( 30 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=13]
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=12]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=16]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 18 )
+region = Rect2( 20, 2, 13, 9 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="BG_night" type="TextureRect" parent="."]
+visible = false
+margin_left = -449.0
+margin_top = -87.0
+margin_right = 2029.0
+margin_bottom = 1772.0
+texture = ExtResource( 16 )
+stretch_mode = 1
+
+[node name="BG_sunsetrise" type="TextureRect" parent="."]
+visible = false
+margin_left = -449.0
+margin_top = -87.0
+margin_right = 2029.0
+margin_bottom = 1772.0
+texture = ExtResource( 19 )
+stretch_mode = 1
+
+[node name="BG_morning" type="TextureRect" parent="."]
+margin_left = -652.0
+margin_top = -70.0
+margin_right = 1826.0
+margin_bottom = 1789.0
+texture = ExtResource( 20 )
+stretch_mode = 1
+
+[node name="GreenMonster" type="KinematicBody2D" parent="."]
+visible = false
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="GreenMonster"]
+position = Vector2( 454, 848 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 3 )
+frame = 1
+playing = true
+
+[node name="RedMonster" type="KinematicBody2D" parent="."]
+visible = false
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RedMonster"]
+position = Vector2( 422, 844 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 7 )
+frame = 1
+playing = true
+
+[node name="BlueMonster" type="KinematicBody2D" parent="."]
+visible = false
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="BlueMonster"]
+position = Vector2( 438, 806 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 11 )
+playing = true
+
+[node name="Poop" type="TextureRect" parent="."]
+visible = false
+margin_left = 568.0
+margin_top = 949.0
+margin_right = 1068.0
+margin_bottom = 1449.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -350.0
+rect_min_size = Vector2( 0, 350 )
+
+[node name="Panel" type="Panel" parent="CanvasLayer/HBoxContainer"]
+margin_right = 900.0
+margin_bottom = 350.0
+rect_min_size = Vector2( 900, 0 )
+custom_styles/panel = SubResource( 15 )
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer/Panel"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="EatButton" type="TouchScreenButton" parent="CanvasLayer/HBoxContainer/Panel"]
+position = Vector2( 38, 67 )
+scale = Vector2( 0.392, 0.392 )
+normal = ExtResource( 1 )
+pressed = ExtResource( 28 )
+
+[node name="CleanButton" type="TouchScreenButton" parent="CanvasLayer/HBoxContainer/Panel"]
+position = Vector2( 670, 121 )
+scale = Vector2( 0.183706, 0.183706 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 29 )
+
+[node name="MemeButton" type="TouchScreenButton" parent="CanvasLayer/HBoxContainer/Panel"]
+position = Vector2( 334, 120 )
+scale = Vector2( 1.82431, 2.56818 )
+normal = ExtResource( 27 )
+pressed = ExtResource( 3 )
+
+[node name="FoodMenu" type="TextureRect" parent="."]
+visible = false
+margin_left = 60.0
+margin_top = 508.0
+margin_right = 854.0
+margin_bottom = 1143.0
+texture = ExtResource( 14 )
+stretch_mode = 1
+
+[node name="Menu" type="Label" parent="FoodMenu"]
+margin_left = 286.0
+margin_top = 51.0
+margin_right = 326.0
+margin_bottom = 67.0
+rect_scale = Vector2( 5, 5 )
+custom_fonts/font = SubResource( 13 )
+text = "MENU:"
+
+[node name="FoodCake" type="TouchScreenButton" parent="FoodMenu"]
+position = Vector2( 105, 254 )
+scale = Vector2( 4, 4 )
+normal = ExtResource( 15 )
+
+[node name="FoodEgg" type="TouchScreenButton" parent="FoodMenu"]
+position = Vector2( 327, 244 )
+scale = Vector2( 4, 4 )
+normal = ExtResource( 12 )
+
+[node name="FoodBegel" type="TouchScreenButton" parent="FoodMenu"]
+position = Vector2( 549, 253 )
+scale = Vector2( 4, 4 )
+normal = ExtResource( 13 )
+
+[node name="Close" type="TouchScreenButton" parent="FoodMenu"]
+position = Vector2( 648, 48 )
+scale = Vector2( 5.5, 5.5 )
+normal = ExtResource( 17 )
+
+[node name="OST" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 410, 48 )
+stream = ExtResource( 7 )
+autoplay = true
+
+[node name="LV" type="Label" parent="."]
+margin_left = 45.0
+margin_top = 232.0
+margin_right = 65.0
+margin_bottom = 248.0
+rect_scale = Vector2( 7, 7 )
+custom_fonts/font = SubResource( 12 )
+text = "LV:"
+
+[node name="LVval" type="Label" parent="."]
+margin_left = 180.0
+margin_top = 232.0
+margin_right = 200.0
+margin_bottom = 248.0
+rect_scale = Vector2( 7, 7 )
+custom_fonts/font = SubResource( 12 )
+
+[node name="Stars" type="TextureRect" parent="."]
+margin_left = 634.0
+margin_top = 201.0
+margin_right = 1115.0
+margin_bottom = 720.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 11 )
+
+[node name="Nstars" type="Label" parent="Stars"]
+margin_left = 190.0
+margin_top = 153.333
+margin_right = 223.0
+margin_bottom = 179.333
+rect_scale = Vector2( 15, 15 )
+custom_fonts/font = SubResource( 16 )
+text = "1"
+
+[node name="Meme" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Saver" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="HP" type="HBoxContainer" parent="CanvasLayer2"]
+unique_name_in_owner = true
+margin_left = 237.0
+margin_top = 89.0
+margin_right = 285.0
+margin_bottom = 100.0
+rect_scale = Vector2( 8, 8 )
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Heart1" type="TextureRect" parent="CanvasLayer2/HP"]
+margin_right = 13.0
+margin_bottom = 11.0
+texture = SubResource( 14 )
+stretch_mode = 5
+
+[node name="Heart2" type="TextureRect" parent="CanvasLayer2/HP"]
+margin_left = 17.0
+margin_right = 30.0
+margin_bottom = 11.0
+texture = SubResource( 14 )
+stretch_mode = 5
+
+[node name="Heart3" type="TextureRect" parent="CanvasLayer2/HP"]
+margin_left = 34.0
+margin_right = 47.0
+margin_bottom = 11.0
+texture = SubResource( 14 )
+stretch_mode = 5
+
+[node name="TextBox" parent="." instance=ExtResource( 22 )]
+offset = Vector2( 0, -500 )
+transform = Transform2D( 1, 0, 0, 1, 0, -500 )
+
+[node name="GoOn" type="TouchScreenButton" parent="."]
+visible = false
+position = Vector2( 531, 581 )
+rotation = 1.5708
+scale = Vector2( 9.55273, 9.55273 )
+normal = ExtResource( 24 )
+pressed = ExtResource( 23 )
+
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/Panel/EatButton" to="." method="_on_EatButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/Panel/CleanButton" to="." method="_on_CleanButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/Panel/MemeButton" to="." method="_on_MemeButton_pressed"]
+[connection signal="pressed" from="FoodMenu/FoodCake" to="." method="_on_FoodCake_pressed"]
+[connection signal="pressed" from="FoodMenu/FoodEgg" to="." method="_on_FoodEgg_pressed"]
+[connection signal="pressed" from="FoodMenu/FoodBegel" to="." method="_on_FoodBegel_pressed"]
+[connection signal="pressed" from="FoodMenu/Close" to="." method="_on_Close_pressed"]
+[connection signal="timeout" from="Saver" to="." method="_on_Saver_timeout"]
+[connection signal="pressed" from="GoOn" to="." method="_on_GoOn_pressed"]

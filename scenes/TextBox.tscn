@@ -1,0 +1,104 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/backgrounds/goOnP.png" type="Texture" id=1]
+[ext_resource path="res://assets/backgrounds/goOn.png" type="Texture" id=2]
+[ext_resource path="res://scenes/TextBox.gd" type="Script" id=3]
+[ext_resource path="res://assets/font/Born2bSportyV10.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 84
+font_data = ExtResource( 4 )
+
+[node name="TextBox" type="CanvasLayer"]
+offset = Vector2( 0, -450 )
+transform = Transform2D( 1, 0, 0, 1, 0, -450 )
+script = ExtResource( 3 )
+
+[node name="TextBoxContainer" type="MarginContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 53.0
+margin_top = -318.0
+margin_right = -42.0
+margin_bottom = -18.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Panel" type="Panel" parent="TextBoxContainer"]
+margin_right = 805.0
+margin_bottom = 300.0
+custom_styles/panel = SubResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="TextBoxContainer"]
+margin_right = 805.0
+margin_bottom = 300.0
+custom_constants/margin_right = 8
+custom_constants/margin_top = 8
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 8
+
+[node name="Panel" type="Panel" parent="TextBoxContainer/MarginContainer"]
+visible = false
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 797.0
+margin_bottom = 292.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextBoxContainer/MarginContainer"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 797.0
+margin_bottom = 292.0
+
+[node name="readBtn" type="TouchScreenButton" parent="TextBoxContainer/MarginContainer/HBoxContainer"]
+visible = false
+position = Vector2( 800, 210 )
+rotation = 1.5708
+scale = Vector2( 5, 5 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 1 )
+action = "ui_accept"
+
+[node name="Start" type="Label" parent="TextBoxContainer/MarginContainer/HBoxContainer"]
+margin_right = 37.0
+margin_bottom = 84.0
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 11 )
+text = "*"
+
+[node name="Label" type="Label" parent="TextBoxContainer/MarginContainer/HBoxContainer"]
+margin_left = 41.0
+margin_right = 748.0
+margin_bottom = 284.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 11 )
+text = "Text"
+autowrap = true
+clip_text = true
+
+[node name="End" type="Label" parent="TextBoxContainer/MarginContainer/HBoxContainer"]
+margin_left = 752.0
+margin_top = 200.0
+margin_right = 789.0
+margin_bottom = 284.0
+size_flags_vertical = 8
+custom_fonts/font = SubResource( 11 )
+text = "v"
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
